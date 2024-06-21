@@ -73,7 +73,7 @@ public class Put : IEndpoint
             Phone = request.Phone,
             Status = request.Status,
             Id = id,
-            CreatedAt = utcNow,
+            CreatedAt = isRegisterState?utcNow:oldUser.CreatedAt,
             UpdatedAt = utcNow,
             EmailIsValid = false,
             PhoneIsValid = false
